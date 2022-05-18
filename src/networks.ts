@@ -87,6 +87,26 @@ export const networkInfo = new Map<number, NetworkInfo>([
     },
   ],
   [
+    10000,
+    {
+      chainID: 10000,
+      name: "SmartBCH",
+      shortName: "smartbch",
+      currencySymbol: "BCH",
+      baseAPI: "https://safe-transaction.smartbch.smartsafe.cash/api/v1",
+    },
+  ],
+  [
+    10001,
+    {
+      chainID: 10001,
+      name: "SmartBCH Amber",
+      shortName: "smartbch-amber",
+      currencySymbol: "BCH",
+      baseAPI: "https://safe-transaction.smartbch-amber.smartsafe.cash/api/v1",
+    },
+  ],
+  [
     42161,
     {
       chainID: 42161,

@@ -112,6 +112,10 @@ const GlobalStyle = createGlobalStyle`
         cursor: pointer;
     }
 
+    // patch modal width
+    div[class|='makeStyles-paper'] {
+        min-width: 360px;
+    }
 `;
 
 export default GlobalStyle;
