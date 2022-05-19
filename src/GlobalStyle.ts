@@ -113,7 +113,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     // patch modal width
-    div[class|='makeStyles-paper'] {
+    body div[role='presentation'] div[tabindex='-1'] {
         min-width: 360px;
     }
 `;
