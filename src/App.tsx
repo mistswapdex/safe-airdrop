@@ -118,7 +118,9 @@ const App: React.FC = () => {
 };
 
 const Container = styled.div`
-  margin-left: 16px;
+  @media (min-width: 768px) {
+    margin-left: 16px;
+  }
   display: flex;
   flex-direction: column;
   flex: 1;

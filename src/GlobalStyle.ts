@@ -17,7 +17,9 @@ const GlobalStyle = createGlobalStyle`
 
     #root {
         height: 100%;
-        padding-right: 2rem;
+        @media (min-width: 768px) {
+            padding-right: 2rem;
+        }
     }
 
     .MuiFormControl-root,
@@ -52,6 +54,11 @@ const GlobalStyle = createGlobalStyle`
     .cardWithCustomShadow {
         box-shadow: 1px 2px 10px 0.18 #000000;
         margin-top: 16px;
+        padding-left: 8px;
+        padding-right: 14px;
+        @media (min-width: 768px) {
+            padding: 24px;
+        },
     }
 
     .MuiPaper-elevation3 {
