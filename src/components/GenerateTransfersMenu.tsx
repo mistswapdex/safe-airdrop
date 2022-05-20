@@ -84,13 +84,13 @@ export const GenerateTransfersMenu = (props: GenerateTransfersMenuProps): JSX.El
             <AddressInput
               address={drainAddress}
               hiddenLabel
-              label="Address"
+              label="Address or LNS Name"
               name="address"
               error={error}
               getAddressFromDomain={(name) => ensResolver.resolveName(name).then((address) => address ?? name)}
               onChangeAddress={setDrainAddress}
-              placeholder="Ethereum address"
-              showNetworkPrefix={true}
+              placeholder="Address or LNS Name"
+              showNetworkPrefix={false}
               networkPrefix={selectedNetworkInfo?.shortName}
             />
           }

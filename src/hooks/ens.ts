@@ -30,7 +30,15 @@ export interface EnsResolver {
 
 export const useEnsResolver: () => EnsResolver = () => {
   const { safe, sdk } = useSafeAppsSDK();
-  const web3Provider = useMemo(() => new ethers.providers.Web3Provider(new SafeAppProvider(safe, sdk)), [sdk, safe]);
+  const chainId = safe.chainId;
+  const ensAddress: string | undefined = {
+    10000: "0xCfb86556760d03942EBf1ba88a9870e67D77b627",
+    10001: "0x32f1FBE59D771bdB7FB247FE97A635f50659202b",
+  }[chainId];
+  const web3Provider = useMemo(
+    () => new ethers.providers.Web3Provider(new SafeAppProvider(safe, sdk), { ensAddress, chainId, name: "" }),
+    [sdk, safe, chainId, ensAddress],
+  );
   const resolveCache = useMemo(() => new Map<string, string | null>(), []);
 
   const lookupCache = useMemo(() => new Map<string, string | null>(), []);
