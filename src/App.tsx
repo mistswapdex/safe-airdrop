@@ -93,21 +93,23 @@ const App: React.FC = () => {
                   </Button>
                 </>
               ) : (
-                <Button
-                  style={{ alignSelf: "flex-start", marginTop: 16, marginBottom: 16 }}
-                  size="lg"
-                  color={messages.length === 0 ? "primary" : "error"}
-                  onClick={submitTx}
-                  disabled={parsing || tokenTransfers.length + collectibleTransfers.length === 0}
-                >
-                  {parsing ? (
-                    <Loader size="sm" color="primaryLight" />
-                  ) : messages.length === 0 ? (
-                    "Submit"
-                  ) : (
-                    "Submit with errors"
-                  )}
-                </Button>
+                <div style={{ maxWidth: 660, display: "flex", justifyContent: "center" }}>
+                  <Button
+                    style={{ alignSelf: "flex-start", marginTop: 16, marginBottom: 16 }}
+                    size="lg"
+                    color={messages.length === 0 ? "primary" : "error"}
+                    onClick={submitTx}
+                    disabled={parsing || tokenTransfers.length + collectibleTransfers.length === 0}
+                  >
+                    {parsing ? (
+                      <Loader size="sm" color="primaryLight" />
+                    ) : messages.length === 0 ? (
+                      "Submit"
+                    ) : (
+                      "Submit with errors"
+                    )}
+                  </Button>
+                </div>
               )}
             </Card>
           )}
