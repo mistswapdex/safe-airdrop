@@ -16,7 +16,7 @@ export const Summary = (props: SummaryProps): JSX.Element => {
   const collectibleTxCount = collectibleTransfers.length;
   return (
     <>
-      <Accordion disabled={assetTxCount === 0} compact style={{ maxWidth: 1400 }}>
+      <Accordion disabled={assetTxCount === 0} compact style={{ maxWidth: 660 }}>
         <AccordionSummary>
           <div
             style={{
@@ -46,7 +46,7 @@ export const Summary = (props: SummaryProps): JSX.Element => {
           {assetTransfers.length > 0 && <AssetTransferTable transferContent={assetTransfers} />}
         </AccordionDetails>
       </Accordion>
-      <Accordion disabled={collectibleTxCount === 0} compact style={{ maxWidth: 1400 }}>
+      <Accordion disabled={collectibleTxCount === 0} compact style={{ maxWidth: 660 }}>
         <AccordionSummary>
           <div
             style={{ display: "flex", gap: "8px", width: "100%", alignItems: "center", justifyContent: "flex-start" }}

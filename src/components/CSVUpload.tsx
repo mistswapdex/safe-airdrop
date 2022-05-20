@@ -1,7 +1,6 @@
 import { Button, Text, theme as GnosisTheme } from "@gnosis.pm/safe-react-components";
 import { createStyles } from "@material-ui/core";
 import React, { useCallback, useMemo } from "react";
-import { isMobile } from "react-device-detect";
 import { useDropzone } from "react-dropzone";
 
 export type CSVUploadProps = {
@@ -40,7 +39,6 @@ export const CSVUpload = (props: CSVUploadProps): JSX.Element => {
       ...(isDragActive ? styles.activeStyle : {}),
       ...(isDragAccept ? styles.acceptStyle : {}),
       ...(isDragReject ? styles.rejectStyle : {}),
-      ...(isMobile ? styles.mobileStyle : {}),
     }),
     [isDragActive, isDragReject, isDragAccept],
   );
@@ -60,7 +58,7 @@ export const CSVUpload = (props: CSVUploadProps): JSX.Element => {
           <Button size="md" variant="contained" color="primary" component="span">
             Upload CSV
           </Button>
-          <Text center size={isMobile ? "md" : "lg"}>
+          <Text center size={"lg"}>
             or drop file here
           </Text>
         </div>
@@ -78,10 +76,7 @@ const styles = createStyles({
     padding: "5px",
     borderWidth: 2,
     borderRadius: 2,
-    [`@media (min-width: ${768}px)`]: {
-      width: "660px",
-      padding: "20px",
-    },
+    maxWidth: "660px",
     borderColor: "rgba(0, 0, 0, 0.23)",
     borderStyle: "dashed",
     backgroundColor: "#fafafa",
@@ -97,8 +92,5 @@ const styles = createStyles({
   },
   rejectStyle: {
     borderColor: GnosisTheme.colors.error,
-  },
-  mobileStyle: {
-    width: "",
   },
 });
