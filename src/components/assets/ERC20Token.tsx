@@ -35,7 +35,7 @@ export const ERC20Token = (props: TokenProps) => {
           }}
         />
       )}
-      {tokenAddress === null && <Icon size="md" type="eth" />}
+      {tokenAddress === null && <Icon size="md" type="paymentToken" />}
       <Text size="md">{symbol || tokenAddress}</Text>
     </Container>
   );
