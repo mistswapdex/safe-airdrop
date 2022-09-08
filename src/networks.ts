@@ -87,6 +87,26 @@ export const networkInfo = new Map<number, NetworkInfo>([
     },
   ],
   [
+    568,
+    {
+      chainID: 568,
+      name: "Dogechain Testnet",
+      shortName: "dogechain-testnet",
+      currencySymbol: "DOGE",
+      baseAPI: "https://safe-transaction.dogechain-testnet.smartsafe.cash/api/v1",
+    },
+  ],
+  [
+    2000,
+    {
+      chainID: 2000,
+      name: "Dogechain",
+      shortName: "dogechain",
+      currencySymbol: "DOGE",
+      baseAPI: "https://safe-transaction.dogechain.smartsafe.cash/api/v1",
+    },
+  ],
+  [
     10000,
     {
       chainID: 10000,

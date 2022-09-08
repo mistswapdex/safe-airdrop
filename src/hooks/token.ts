@@ -40,6 +40,13 @@ export const fetchTokenList = async (chainId: number): Promise<TokenMap> => {
     case 100:
       tokens = xdaiTokens.tokens;
       break;
+    case 2000:
+      const dogechainTokenURL = "https://tokens.coingecko.com/dogechain/all.json";
+      tokens = await fetch(dogechainTokenURL)
+        .then((response) => response.json())
+        .then((response) => response.tokens)
+        .catch(() => []);
+      break;
     case 10000:
       const smartbchTokenURL = "https://tokens.coingecko.com/smartbch/all.json";
       tokens = await fetch(smartbchTokenURL)
