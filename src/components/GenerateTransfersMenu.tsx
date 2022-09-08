@@ -16,12 +16,20 @@ export interface GenerateTransfersMenuProps {
   setCsvText: (csv: string) => void;
 }
 
+const ensNames = {
+  568: "DNS",
+  2000: "DNS",
+  10000: "LNS",
+  10001: "LNS",
+};
+
 export const GenerateTransfersMenu = (props: GenerateTransfersMenuProps): JSX.Element => {
   const { assetBalance, collectibleBalance, setCsvText } = props;
   const [isGenerationMenuOpen, setIsGenerationMenuOpen] = useState(false);
   const [isDrainModalOpen, setIsDrainModalOpen] = useState(false);
   const [drainAddress, setDrainAddress] = useState("");
   const { safe } = useSafeAppsSDK();
+  const ensProjectName = ensNames[safe.chainId] ?? "ENS";
 
   const ensResolver = useEnsResolver();
 
@@ -84,12 +92,12 @@ export const GenerateTransfersMenu = (props: GenerateTransfersMenuProps): JSX.El
             <AddressInput
               address={drainAddress}
               hiddenLabel
-              label="Address or LNS Name"
+              label={`Address or ${ensProjectName} Name`}
               name="address"
               error={error}
               getAddressFromDomain={(name) => ensResolver.resolveName(name).then((address) => address ?? name)}
               onChangeAddress={setDrainAddress}
-              placeholder="Address or LNS Name"
+              placeholder={`Address or ${ensProjectName} Name`}
               showNetworkPrefix={false}
               networkPrefix={selectedNetworkInfo?.shortName}
             />
